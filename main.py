@@ -2,6 +2,7 @@ import calc_function.calc_add as calc_add
 import calc_function.calc_sub as calc_sub 
 import calc_function.calc_mul as calc_mul
 import calc_function.calc_div as calc_div
+from exit_check import next_calculation_check
 from log import usual_log
 from log import unusual_log
 
@@ -38,22 +39,29 @@ while True:
                 usual_log.error(str(num1)+ " / " + str(num2))
                 print(num1, "/", num2, "=", calc_div.divide(num1,num2))
 
+        # state_check = "break"
+        # while True:
+        #     next_calculation = input("Let's do next calculation? (yes/no): ")
 
-        state_check = "break"
-        while True:
-            next_calculation = input("Let's do next calculation? (yes/no): ")
+        #     if next_calculation.lower() == "no":
+        #         one_more_check = input("Are you sure? (yes/no): ")
+        #         if one_more_check.lower() == "yes":
+        #             break
+        #         elif one_more_check.lower() == "no":
+        #             state_check = "continue"
+        #             break
 
-            if next_calculation.lower() == "no":
-                one_more_check = input("Are you sure? (yes/no): ")
-                if one_more_check.lower() == "yes":
-                    break
-                elif one_more_check.lower() == "no":
-                    state_check = "continue"
-                    break
+        #     elif next_calculation.lower() == "yes":
+        #         state_check = "continue"
+        #         break
 
-            elif next_calculation.lower() == "yes":
-                state_check = "continue"
-                break
+        # if state_check == "break":
+        #     break
+
+        # elif state_check == "continue":
+        #     continue
+
+        state_check = next_calculation_check()
 
         if state_check == "break":
             break
