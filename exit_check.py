@@ -1,5 +1,4 @@
 from log import usual_log
-from log import unusual_log
 
 def next_calculation_check():
     while True:
