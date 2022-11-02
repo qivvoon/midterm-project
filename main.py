@@ -2,7 +2,8 @@ import calc_function.calc_add as calc_add
 import calc_function.calc_sub as calc_sub 
 import calc_function.calc_mul as calc_mul
 import calc_function.calc_div as calc_div
-
+from log import usual_log
+from log import unusual_log
 
 print("Select operation.")
 print("1.Add")
@@ -18,18 +19,23 @@ while True:
         num2 = float(input("Enter second number: "))
 
         if choice == '1':
+            usual_log.error(str(num1)+ " + " + str(num2))
             print(num1, "+", num2, "=", calc_add.add(num1, num2))
 
         elif choice == '2':
+            usual_log.error(str(num1)+ " - " + str(num2))
             print(num1, "-", num2, "=", calc_sub.subtract(num1, num2))
 
         elif choice == '3':
+            usual_log.error(str(num1)+ " * " + str(num2))
             print(num1, "*", num2, "=", calc_mul.multiply(num1, num2))
             
         elif choice =='4':
             if num2 == 0:
+                unusual_log.error("divide by zero")
                 print("error! can't divide by zero")
             else:
+                usual_log.error(str(num1)+ " / " + str(num2))
                 print(num1, "/", num2, "=", calc_div.divide(num1,num2))
 
 
@@ -57,4 +63,5 @@ while True:
 
 
     else:
+        unusual_log.error("another choice selected")
         print("Invalid Input")
