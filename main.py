@@ -39,6 +39,9 @@ while True:
                 usual_log.error(str(num1)+ " / " + str(num2))
                 print(num1, "/", num2, "=", calc_div.divide(num1,num2))
 
+        # next_calculation_check() 실행 후 return된 값이 
+        # "break"라면 프로그램을 종료하고,
+        # "continue"라면 프로그램을 계속 진행한다.
         state_check = next_calculation_check()
 
         if state_check == "break":
